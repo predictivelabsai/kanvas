@@ -1,0 +1,6 @@
+python-fasthtml
+sqlalchemy
+psycopg2-binary
+python-dotenv
+uvicorn
+python-multipart
