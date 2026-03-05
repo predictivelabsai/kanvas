@@ -14,7 +14,7 @@ def how_it_works_page():
 
     def step_item(num, title, desc):
         return Div(
-            Div(num, cls='w-12 h-12 min-w-[48px] bg-black text-white rounded-full flex items-center justify-center font-extrabold text-lg'),
+            Div(num, cls='w-12 h-12 min-w-[48px] bg-primary text-white rounded-full flex items-center justify-center font-extrabold text-lg'),
             Div(
                 H3(title, cls='text-lg font-bold mb-2'),
                 P(desc, cls='text-gray-500 text-sm'),
@@ -37,19 +37,19 @@ def how_it_works_page():
                        'When an artwork appreciates and is sold, you receive your proportional share of the profits. Track valuations and portfolio performance in real-time through your dashboard.'),
             Div(
                 A('Start Investing Now', href='/register',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-black text-white hover:bg-gray-800 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-primary text-white hover:bg-primary-dark transition-colors'),
                 cls='text-center mt-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     for_artists = Section(
         Div(
             Div(
                 H2('For Artists & Galleries', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('Access a new channel for your works with upfront capital and broader collector reach.', cls='text-base text-gray-400 max-w-xl mx-auto'),
+                P('Access a new channel for your works with upfront capital and broader collector reach.', cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             step_item('1', 'Submit Your Artwork',
@@ -60,12 +60,12 @@ def how_it_works_page():
                        'Once approved and funded by our investor community, you receive upfront payment. The artwork is securely stored and insured while our investors hold fractional shares.'),
             Div(
                 A('Consign Artwork', href='/artists',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
                 cls='text-center mt-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     offering_types = Section(
@@ -98,14 +98,14 @@ def how_it_works_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     risk = Section(
         Div(
             Div(
                 H2('Risk Management', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('How we protect your investments.', cls='text-base text-gray-400 max-w-xl mx-auto'),
+                P('How we protect your investments.', cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -137,7 +137,7 @@ def how_it_works_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     return Div(hero, for_investors, for_artists, offering_types, risk)

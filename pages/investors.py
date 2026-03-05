@@ -43,14 +43,14 @@ def investors_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     investment_options = Section(
         Div(
             Div(
                 H2('Investment Options', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('Choose the approach that suits your style.', cls='text-base text-gray-400 max-w-xl mx-auto'),
+                P('Choose the approach that suits your style.', cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -66,7 +66,7 @@ def investors_page():
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
-                    H3('Curated Selection', cls='text-black mb-4 text-lg font-bold'),
+                    H3('Curated Selection', cls='text-primary mb-4 text-lg font-bold'),
                     P('Browse and select individual artworks from our gallery.', cls='mb-6 text-gray-500 text-sm'),
                     Div(
                         P('\u2713 Full control over your collection', cls='mb-2 text-sm text-gray-500'),
@@ -77,7 +77,7 @@ def investors_page():
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
-                    H3('Secondary Market', cls='text-gray-300 mb-4 text-lg font-bold'),
+                    H3('Secondary Market', cls='text-blue-300 mb-4 text-lg font-bold'),
                     P('Buy and sell existing fractional positions.', cls='mb-6 text-gray-500 text-sm'),
                     Div(
                         P('\u2713 Added liquidity for your holdings', cls='mb-2 text-sm text-gray-500'),
@@ -91,7 +91,7 @@ def investors_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     key_figures = Section(
@@ -101,15 +101,15 @@ def investors_page():
                 cls='text-center mb-12'
             ),
             Div(
-                Div(H3('\u20ac500', cls='text-3xl font-extrabold text-black mb-1'), P('Minimum Investment', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('10\u201318%', cls='text-3xl font-extrabold text-black mb-1'), P('Target Returns', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('3\u201310 yr', cls='text-3xl font-extrabold text-black mb-1'), P('Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('180+', cls='text-3xl font-extrabold text-black mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('\u20ac500', cls='text-3xl font-extrabold text-primary mb-1'), P('Minimum Investment', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('10\u201318%', cls='text-3xl font-extrabold text-primary mb-1'), P('Target Returns', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('3\u201310 yr', cls='text-3xl font-extrabold text-primary mb-1'), P('Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('180+', cls='text-3xl font-extrabold text-primary mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
                 cls='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     cta = Section(
@@ -118,7 +118,7 @@ def investors_page():
             P('Create your free account and invest in your first artwork in minutes.',
               cls='text-lg text-white/90 max-w-xl mx-auto mb-8'),
             A('Create Account', href='/register',
-              cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+              cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
         ),
         cls='art-gradient text-white py-20 px-8 text-center'
     )

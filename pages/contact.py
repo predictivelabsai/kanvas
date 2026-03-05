@@ -28,10 +28,10 @@ def contact_page():
                       'United Kingdom', cls='mb-4 text-sm text-gray-600 leading-relaxed'),
                     P(Strong('Email'), Br(),
                       A('london@kanvas.ai', href='mailto:london@kanvas.ai',
-                        cls='text-black no-underline'), cls='mb-4 text-sm'),
+                        cls='text-primary no-underline'), cls='mb-4 text-sm'),
                     P(Strong('Phone'), Br(),
                       A('+44 20 7123 4567', href='tel:+442071234567',
-                        cls='text-black no-underline'), cls='text-sm'),
+                        cls='text-primary no-underline'), cls='text-sm'),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
@@ -43,10 +43,10 @@ def contact_page():
                       'France', cls='mb-4 text-sm text-gray-600 leading-relaxed'),
                     P(Strong('Email'), Br(),
                       A('paris@kanvas.ai', href='mailto:paris@kanvas.ai',
-                        cls='text-black no-underline'), cls='mb-4 text-sm'),
+                        cls='text-primary no-underline'), cls='mb-4 text-sm'),
                     P(Strong('Phone'), Br(),
                       A('+33 1 42 78 56 00', href='tel:+33142785600',
-                        cls='text-black no-underline'), cls='text-sm'),
+                        cls='text-primary no-underline'), cls='text-sm'),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
@@ -57,17 +57,17 @@ def contact_page():
                       'Switzerland', cls='mb-4 text-sm text-gray-600 leading-relaxed'),
                     P(Strong('Email'), Br(),
                       A('zurich@kanvas.ai', href='mailto:zurich@kanvas.ai',
-                        cls='text-black no-underline'), cls='mb-4 text-sm'),
+                        cls='text-primary no-underline'), cls='mb-4 text-sm'),
                     P(Strong('Phone'), Br(),
                       A('+41 44 210 12 34', href='tel:+41442101234',
-                        cls='text-black no-underline'), cls='text-sm'),
+                        cls='text-primary no-underline'), cls='text-sm'),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 cls='grid grid-cols-1 md:grid-cols-3 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     general = Section(
@@ -81,28 +81,28 @@ def contact_page():
                     H3('Investor Support', cls='text-lg font-bold text-gray-900 mb-3'),
                     P('Questions about your account, investments, or portfolio?', cls='text-gray-500 text-sm mb-4'),
                     P(A('investors@kanvas.ai', href='mailto:investors@kanvas.ai',
-                        cls='text-accent no-underline font-semibold')),
+                        cls='text-primary no-underline font-semibold')),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
                     H3('Consignment Enquiries', cls='text-lg font-bold text-gray-900 mb-3'),
                     P('Want to consign artwork or have questions about the process?', cls='text-gray-500 text-sm mb-4'),
                     P(A('consign@kanvas.ai', href='mailto:consign@kanvas.ai',
-                        cls='text-accent no-underline font-semibold')),
+                        cls='text-primary no-underline font-semibold')),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
                     H3('Press & Media', cls='text-lg font-bold text-gray-900 mb-3'),
                     P('Media enquiries, partnership opportunities, or press information?', cls='text-gray-500 text-sm mb-4'),
                     P(A('press@kanvas.ai', href='mailto:press@kanvas.ai',
-                        cls='text-accent no-underline font-semibold')),
+                        cls='text-primary no-underline font-semibold')),
                     cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 cls='grid grid-cols-1 md:grid-cols-3 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     return Div(hero, offices, general)

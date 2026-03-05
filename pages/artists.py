@@ -9,7 +9,7 @@ def artists_page():
               cls='text-lg text-white/90 max-w-2xl mb-8'),
             Div(
                 A('Submit Artwork', href='/contact',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
                 cls='flex gap-4 flex-wrap'
             ),
             cls='max-w-7xl mx-auto relative z-10'
@@ -47,14 +47,14 @@ def artists_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     eligible = Section(
         Div(
             Div(
                 H2('What We Accept', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('We consider a wide range of fine art categories.', cls='text-base text-gray-400 max-w-xl mx-auto'),
+                P('We consider a wide range of fine art categories.', cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -86,7 +86,7 @@ def artists_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     deal_details = Section(
@@ -96,20 +96,20 @@ def artists_page():
                 cls='text-center mb-12'
             ),
             Div(
-                Div(H3('\u20ac10K \u2013 \u20ac10M', cls='text-3xl font-extrabold text-black mb-1'), P('Artwork Value Range', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('3 \u2013 10 yr', cls='text-3xl font-extrabold text-black mb-1'), P('Typical Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('180+', cls='text-3xl font-extrabold text-black mb-1'), P('Works Consigned', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('48 hrs', cls='text-3xl font-extrabold text-black mb-1'), P('Initial Review', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('\u20ac10K \u2013 \u20ac10M', cls='text-3xl font-extrabold text-primary mb-1'), P('Artwork Value Range', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('3 \u2013 10 yr', cls='text-3xl font-extrabold text-primary mb-1'), P('Typical Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('180+', cls='text-3xl font-extrabold text-primary mb-1'), P('Works Consigned', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('48 hrs', cls='text-3xl font-extrabold text-primary mb-1'), P('Initial Review', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
                 cls='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     def step_item(num, title, desc):
         return Div(
-            Div(num, cls='w-12 h-12 min-w-[48px] bg-black text-white rounded-full flex items-center justify-center font-extrabold text-lg'),
+            Div(num, cls='w-12 h-12 min-w-[48px] bg-primary text-white rounded-full flex items-center justify-center font-extrabold text-lg'),
             Div(
                 H3(title, cls='text-lg font-bold mb-2'),
                 P(desc, cls='text-gray-500 text-sm'),
@@ -133,7 +133,7 @@ def artists_page():
                        'Once fully funded by our investor community, you receive payment. The artwork is transferred to our secure, climate-controlled storage facilities.'),
             Div(
                 A('Submit Artwork', href='/contact',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-black text-white hover:bg-gray-800 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-primary text-white hover:bg-primary-dark transition-colors'),
                 cls='text-center mt-8'
             ),
             cls='max-w-7xl mx-auto'

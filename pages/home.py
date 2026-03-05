@@ -21,7 +21,7 @@ def home_page():
                 ),
                 Div(
                     A('Start Investing', href='/investors',
-                      cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+                      cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
                     A('Consign Artwork', href='/artists',
                       cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-transparent text-white border-2 border-white/30 hover:border-white hover:text-white transition-colors'),
                     cls='flex gap-4 flex-wrap'
@@ -34,12 +34,12 @@ def home_page():
 
     stats = Section(
         Div(
-            Div(H3('14.1%', cls='text-3xl font-extrabold text-black mb-1'), P('Avg. Net Return', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-            Div(H3('\u20ac48M', cls='text-3xl font-extrabold text-black mb-1'), P('Investor Distributions', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-            Div(H3('\u20ac285M', cls='text-3xl font-extrabold text-black mb-1'), P('Art Under Management', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-            Div(H3('12,400+', cls='text-3xl font-extrabold text-black mb-1'), P('Investors', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-            Div(H3('180+', cls='text-3xl font-extrabold text-black mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-            Div(H3('18', cls='text-3xl font-extrabold text-black mb-1'), P('Countries', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('14.1%', cls='text-3xl font-extrabold text-primary mb-1'), P('Avg. Net Return', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('\u20ac48M', cls='text-3xl font-extrabold text-primary mb-1'), P('Investor Distributions', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('\u20ac285M', cls='text-3xl font-extrabold text-primary mb-1'), P('Art Under Management', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('12,400+', cls='text-3xl font-extrabold text-primary mb-1'), P('Investors', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('180+', cls='text-3xl font-extrabold text-primary mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+            Div(H3('18', cls='text-3xl font-extrabold text-primary mb-1'), P('Countries', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
             cls='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-8'
         ),
         cls='bg-white border-b border-gray-200 py-8 px-8'
@@ -60,7 +60,7 @@ def home_page():
                     P('Set your investment preferences once. Our algorithm diversifies across art categories, periods, and price points for optimal portfolio balance.',
                       cls='text-gray-500 text-sm leading-relaxed'),
                     A('Learn more \u2192', href='/how-it-works',
-                      cls='block mt-4 no-underline font-semibold text-sm text-black'),
+                      cls='block mt-4 no-underline font-semibold text-sm text-primary'),
                     cls='bg-white rounded-lg p-8 border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all'
                 ),
                 Div(
@@ -68,7 +68,7 @@ def home_page():
                     P('Hand-pick every artwork. Browse our gallery of vetted pieces with full provenance, condition reports, and market analysis.',
                       cls='text-gray-500 text-sm leading-relaxed'),
                     A('View open offerings \u2192', href='/investors',
-                      cls='block mt-4 no-underline font-semibold text-sm text-black'),
+                      cls='block mt-4 no-underline font-semibold text-sm text-primary'),
                     cls='bg-white rounded-lg p-8 border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all'
                 ),
                 Div(
@@ -81,7 +81,7 @@ def home_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     how_it_works = Section(
@@ -89,7 +89,7 @@ def home_page():
             Div(
                 H2('How Does It Work?', cls='font-display text-3xl font-bold text-white mb-4'),
                 P('We acquire, securitize, and manage museum-quality artworks on behalf of our investors.',
-                  cls='text-base text-gray-400 max-w-xl mx-auto'),
+                  cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -103,26 +103,26 @@ def home_page():
                     cls='bg-white rounded-lg p-8 border-l-4 border-accent'
                 ),
                 Div(
-                    H3('Kanvas.ai', cls='text-black mb-4 text-lg font-bold'),
+                    H3('Kanvas.ai', cls='text-primary mb-4 text-lg font-bold'),
                     P('We handle authentication, insurance, secure storage, and the full investment lifecycle \u2014 '
                       'from acquisition and fractional offering to eventual sale and profit distribution.',
                       cls='text-gray-500 text-sm leading-relaxed'),
-                    cls='bg-white rounded-lg p-8 border-l-4 border-black'
+                    cls='bg-white rounded-lg p-8 border-l-4 border-primary'
                 ),
                 Div(
-                    H3('Investors', cls='text-gray-600 mb-4 text-lg font-bold'),
+                    H3('Investors', cls='text-primary-light mb-4 text-lg font-bold'),
                     P('Join thousands of investors building diversified art portfolios. Earn returns when artworks '
                       'appreciate and are sold. Track your holdings in real-time.',
                       cls='text-gray-500 text-sm leading-relaxed'),
                     A('Start investing \u2192', href='/investors',
                       cls='block mt-4 text-white no-underline font-semibold text-sm'),
-                    cls='bg-white rounded-lg p-8 border-l-4 border-gray-400'
+                    cls='bg-white rounded-lg p-8 border-l-4 border-blue-300'
                 ),
                 cls='grid grid-cols-1 md:grid-cols-3 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     security = Section(
@@ -138,12 +138,12 @@ def home_page():
                       'portfolio diversifier. Blue-chip art has appreciated at 13.8% annually over the past 25 years.',
                       cls='text-gray-500 mb-8'),
                     A('Learn about our process', href='/how-it-works',
-                      cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-black text-white hover:bg-gray-800 transition-colors'),
+                      cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-primary text-white hover:bg-primary-dark transition-colors'),
                 ),
                 Div(
                     Div(
-                        Div(H3('100%', cls='text-3xl font-extrabold text-black mb-1'), P('Artworks insured & authenticated', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                        Div(H3('180+', cls='text-3xl font-extrabold text-black mb-1'), P('Artworks successfully funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('100%', cls='text-3xl font-extrabold text-primary mb-1'), P('Artworks insured & authenticated', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('180+', cls='text-3xl font-extrabold text-primary mb-1'), P('Artworks successfully funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
                         cls='grid grid-cols-2 gap-8'
                     ),
                     cls='bg-white p-8 rounded-lg border border-gray-200'
@@ -152,7 +152,7 @@ def home_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     cta = Section(
@@ -163,7 +163,7 @@ def home_page():
               cls='text-lg text-white/90 max-w-xl mx-auto mb-8'),
             Div(
                 A('Create Free Account', href='/register',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
                 A('Learn More', href='/how-it-works',
                   cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-transparent text-white border-2 border-white/30 hover:border-white hover:text-white transition-colors'),
                 cls='flex gap-4 flex-wrap justify-center'

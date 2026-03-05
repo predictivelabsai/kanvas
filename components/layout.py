@@ -2,7 +2,7 @@ from fasthtml.common import *
 
 
 def app_styles():
-    """Tailwind CDN with Artsy-inspired clean gallery aesthetic."""
+    """Tailwind CDN with clean light blue gallery aesthetic."""
     return (
         # Google Fonts
         Link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap'),
@@ -13,10 +13,10 @@ def app_styles():
           theme: {
             extend: {
               colors: {
-                primary: { DEFAULT: '#1A1A1A', dark: '#000000', light: '#333333' },
+                primary: { DEFAULT: '#2563EB', dark: '#1E40AF', light: '#3B82F6' },
                 accent: { DEFAULT: '#C9A84C', dark: '#B8933A', light: '#D4B96A' },
-                dark: { DEFAULT: '#000000', deeper: '#000000' },
-                gallery: { DEFAULT: '#FAFAFA', warm: '#F7F7F7', cream: '#FFFFFF' },
+                dark: { DEFAULT: '#1E40AF', deeper: '#1E3A8A' },
+                gallery: { DEFAULT: '#EFF6FF', warm: '#F0F9FF', cream: '#FFFFFF' },
               },
               fontFamily: {
                 display: ['Cormorant Garamond', 'Georgia', 'serif'],
@@ -29,7 +29,7 @@ def app_styles():
         # Minimal custom styles
         Style("""
         body { font-family: 'Inter', system-ui, sans-serif; }
-        .art-gradient { background: linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #2A2A2A 100%); }
+        .art-gradient { background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #3B82F6 100%); }
         """),
     )
 
@@ -48,7 +48,7 @@ def NavBar(active='home'):
         base = 'text-sm font-medium no-underline transition-colors duration-200'
         if key == active:
             return A(label, href=href, cls=f'{base} text-accent')
-        return A(label, href=href, cls=f'{base} text-gray-400 hover:text-white')
+        return A(label, href=href, cls=f'{base} text-blue-100 hover:text-white')
 
     return Nav(
         Div(
@@ -60,13 +60,13 @@ def NavBar(active='home'):
             Ul(
                 *[Li(nav_link(key, href, label)) for key, href, label in nav_items],
                 Li(A('Login', href='/login',
-                     cls='bg-white text-black px-5 py-2 rounded-full font-semibold text-sm no-underline hover:bg-gray-200 transition-colors')),
+                     cls='bg-white text-primary px-5 py-2 rounded-full font-semibold text-sm no-underline hover:bg-blue-50 transition-colors')),
                 id='nav-links',
                 cls='hidden md:flex items-center gap-8 list-none m-0 p-0'
             ),
             cls='max-w-7xl mx-auto flex items-center justify-between h-[70px] gap-8'
         ),
-        cls='bg-black px-8 sticky top-0 z-50 border-b border-white/10'
+        cls='bg-primary px-8 sticky top-0 z-50 border-b border-white/15'
     )
 
 
@@ -80,33 +80,33 @@ def PageFooter():
                        cls='font-display text-white text-xl mb-4 tracking-wide'),
                     P('Fine art investment made accessible. We connect investors with expertly curated artworks, '
                       'delivering transparent returns backed by tangible, appreciating assets.',
-                      cls='text-sm leading-relaxed text-gray-400'),
+                      cls='text-sm leading-relaxed text-blue-200'),
                 ),
                 Div(
                     H4('Platform', cls='text-white text-sm uppercase tracking-wider mb-4'),
                     Ul(
-                        Li(A('How It Works', href='/how-it-works', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('Open Investments', href='/investors', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('For Artists', href='/artists', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('About Us', href='/about', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('How It Works', href='/how-it-works', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Open Investments', href='/investors', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('For Artists', href='/artists', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('About Us', href='/about', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
                         cls='list-none'
                     )
                 ),
                 Div(
                     H4('Resources', cls='text-white text-sm uppercase tracking-wider mb-4'),
                     Ul(
-                        Li(A('FAQ', href='/faq', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('Risk Statement', href='/risk', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('Contact', href='/contact', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('FAQ', href='/faq', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Risk Statement', href='/risk', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Contact', href='/contact', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
                         cls='list-none'
                     )
                 ),
                 Div(
                     H4('Legal', cls='text-white text-sm uppercase tracking-wider mb-4'),
                     Ul(
-                        Li(A('Terms of Service', href='/terms', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('Privacy Policy', href='/privacy', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
-                        Li(A('Risk Disclosures', href='/risk', cls='text-gray-500 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Terms of Service', href='/terms', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Privacy Policy', href='/privacy', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
+                        Li(A('Risk Disclosures', href='/risk', cls='text-blue-300 no-underline text-sm hover:text-white transition-colors'), cls='mb-2'),
                         cls='list-none'
                     )
                 ),
@@ -115,10 +115,10 @@ def PageFooter():
             Div(
                 P('\u00a9 2026 Kanvas.ai. All rights reserved. Investing involves risk and can result in loss of capital.'),
                 P('All investments are backed by physical artworks held in secure, climate-controlled storage.'),
-                cls='max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm gap-4'
+                cls='max-w-7xl mx-auto mt-12 pt-8 border-t border-white/15 flex flex-col md:flex-row justify-between items-center text-sm gap-4'
             ),
         ),
-        cls='bg-black text-gray-400 pt-16 pb-8 px-8'
+        cls='bg-primary-dark text-blue-200 pt-16 pb-8 px-8'
     )
 
 

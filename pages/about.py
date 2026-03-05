@@ -30,10 +30,10 @@ def about_page():
                 ),
                 Div(
                     Div(
-                        Div(H3('2023', cls='text-3xl font-extrabold text-black mb-1'), P('Founded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                        Div(H3('45+', cls='text-3xl font-extrabold text-black mb-1'), P('Team Members', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                        Div(H3('18', cls='text-3xl font-extrabold text-black mb-1'), P('Countries', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                        Div(H3('\u20ac285M', cls='text-3xl font-extrabold text-black mb-1'), P('Art Under Management', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('2023', cls='text-3xl font-extrabold text-primary mb-1'), P('Founded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('45+', cls='text-3xl font-extrabold text-primary mb-1'), P('Team Members', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('18', cls='text-3xl font-extrabold text-primary mb-1'), P('Countries', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                        Div(H3('\u20ac285M', cls='text-3xl font-extrabold text-primary mb-1'), P('Art Under Management', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
                         cls='grid grid-cols-2 gap-8'
                     ),
                     cls='bg-white p-8 rounded-lg border border-gray-200'
@@ -42,14 +42,14 @@ def about_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     values = Section(
         Div(
             Div(
                 H2('Our Values', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('The principles that guide everything we do.', cls='text-base text-gray-400 max-w-xl mx-auto'),
+                P('The principles that guide everything we do.', cls='text-base text-blue-100 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -75,7 +75,7 @@ def about_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-black text-white py-20 px-8'
+        cls='bg-primary-dark text-white py-20 px-8'
     )
 
     presence = Section(
@@ -108,7 +108,7 @@ def about_page():
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-[#FAFAFA]'
+        cls='py-20 px-8 bg-blue-50'
     )
 
     cta = Section(
@@ -118,7 +118,7 @@ def about_page():
               cls='text-lg text-white/90 max-w-xl mx-auto mb-8'),
             Div(
                 A('Start Investing', href='/investors',
-                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
+                  cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-primary hover:bg-blue-50 transition-colors'),
                 A('Consign Artwork', href='/artists',
                   cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-transparent text-white border-2 border-white/30 hover:border-white hover:text-white transition-colors'),
                 cls='flex gap-4 flex-wrap justify-center'
