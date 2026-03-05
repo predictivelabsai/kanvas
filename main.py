@@ -89,7 +89,7 @@ def login_form(error=None, email=''):
                             Input(type='password', name='password', placeholder='Your password', required=True, cls=INPUT_CLS),
                         ),
                         Button('Sign In', type='submit',
-                               cls='w-full mt-2 px-6 py-2.5 rounded-md font-semibold text-sm bg-primary text-white hover:bg-primary-light transition-colors cursor-pointer border-none'),
+                               cls='w-full mt-2 px-6 py-2.5 rounded-full font-semibold text-sm bg-black text-white hover:bg-gray-800 transition-colors cursor-pointer border-none'),
                         method='post', action='/login',
                         cls='bg-white p-8 rounded-lg shadow-sm max-w-md mx-auto'
                     ),
@@ -156,7 +156,7 @@ def register():
                         ),
                     ),
                     Button('Create Account', type='submit',
-                           cls='w-full mt-2 px-6 py-2.5 rounded-md font-semibold text-sm bg-primary text-white hover:bg-primary-light transition-colors cursor-pointer border-none'),
+                           cls='w-full mt-2 px-6 py-2.5 rounded-full font-semibold text-sm bg-black text-white hover:bg-gray-800 transition-colors cursor-pointer border-none'),
                     method='post', action='/register',
                     cls='bg-white p-8 rounded-lg shadow-sm max-w-md mx-auto'
                 ),

@@ -6,7 +6,7 @@ def investors_page():
         Div(
             H1('Invest in Fine Art', cls='font-display text-4xl font-extrabold text-white mb-4'),
             P('Own fractional shares of blue-chip artworks by the world\'s most sought-after artists. '
-              'Diversify your portfolio with an asset class that has outperformed the S&P 500 over the past 25 years.',
+              'Diversify your portfolio with an asset class that has outperformed global equities over the past 25 years.',
               cls='text-lg text-white/90 max-w-2xl'),
             cls='max-w-7xl mx-auto relative z-10'
         ),
@@ -22,38 +22,35 @@ def investors_page():
             ),
             Div(
                 Div(
-                    Div('\U0001f4c8', cls='w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-5 text-2xl text-white'),
                     H3('Strong Historical Returns', cls='text-lg font-bold text-gray-900 mb-3'),
-                    P('Blue-chip art has appreciated at 13.8% annually over the past 25 years. Our curated offerings target 10-18% annualized returns.',
+                    P('Blue-chip art has appreciated at 13.8% annually over the past 25 years. Our curated offerings target 10\u201318% annualised returns.',
                       cls='text-gray-500 text-sm leading-relaxed'),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all'
+                    cls='bg-white rounded-lg p-8 border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all'
                 ),
                 Div(
-                    Div('\U0001f3a8', cls='w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-5 text-2xl text-white'),
                     H3('Physical Asset Security', cls='text-lg font-bold text-gray-900 mb-3'),
-                    P('Every investment is backed by a real artwork, professionally appraised, fully insured, and stored in museum-grade facilities.',
+                    P('Every investment is backed by a real artwork, professionally appraised, fully insured, and stored in museum-grade facilities across Europe.',
                       cls='text-gray-500 text-sm leading-relaxed'),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all'
+                    cls='bg-white rounded-lg p-8 border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all'
                 ),
                 Div(
-                    Div('\U0001f4ca', cls='w-12 h-12 bg-gradient-to-br from-primary to-primary-light rounded-xl flex items-center justify-center mb-5 text-2xl text-white'),
                     H3('Portfolio Diversification', cls='text-lg font-bold text-gray-900 mb-3'),
                     P('Art shows low correlation to stocks and bonds. Add an uncorrelated asset class to reduce overall portfolio volatility.',
                       cls='text-gray-500 text-sm leading-relaxed'),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-lg transition-all'
+                    cls='bg-white rounded-lg p-8 border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all'
                 ),
                 cls='grid grid-cols-1 md:grid-cols-3 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-gallery-cream'
+        cls='py-20 px-8 bg-[#FAFAFA]'
     )
 
     investment_options = Section(
         Div(
             Div(
                 H2('Investment Options', cls='font-display text-3xl font-bold text-white mb-4'),
-                P('Choose the approach that suits your style.', cls='text-base text-gray-300 max-w-xl mx-auto'),
+                P('Choose the approach that suits your style.', cls='text-base text-gray-400 max-w-xl mx-auto'),
                 cls='text-center mb-12'
             ),
             Div(
@@ -66,10 +63,10 @@ def investors_page():
                         P('\u2713 Spread across artists and periods', cls='mb-2 text-sm text-gray-500'),
                         P('\u2713 Reinvestment of sale proceeds', cls='mb-2 text-sm text-gray-500'),
                     ),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100'
+                    cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
-                    H3('Curated Selection', cls='text-primary mb-4 text-lg font-bold'),
+                    H3('Curated Selection', cls='text-black mb-4 text-lg font-bold'),
                     P('Browse and select individual artworks from our gallery.', cls='mb-6 text-gray-500 text-sm'),
                     Div(
                         P('\u2713 Full control over your collection', cls='mb-2 text-sm text-gray-500'),
@@ -77,10 +74,10 @@ def investors_page():
                         P('\u2713 Choose by artist, period, medium', cls='mb-2 text-sm text-gray-500'),
                         P('\u2713 Real-time valuation tracking', cls='mb-2 text-sm text-gray-500'),
                     ),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100'
+                    cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 Div(
-                    H3('Secondary Market', cls='text-primary-light mb-4 text-lg font-bold'),
+                    H3('Secondary Market', cls='text-gray-300 mb-4 text-lg font-bold'),
                     P('Buy and sell existing fractional positions.', cls='mb-6 text-gray-500 text-sm'),
                     Div(
                         P('\u2713 Added liquidity for your holdings', cls='mb-2 text-sm text-gray-500'),
@@ -88,13 +85,13 @@ def investors_page():
                         P('\u2713 Adjust portfolio anytime', cls='mb-2 text-sm text-gray-500'),
                         P('\u2713 Market-driven pricing', cls='mb-2 text-sm text-gray-500'),
                     ),
-                    cls='bg-white rounded-xl p-8 shadow-sm border border-gray-100'
+                    cls='bg-white rounded-lg p-8 border border-gray-200'
                 ),
                 cls='grid grid-cols-1 md:grid-cols-3 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='bg-dark text-white py-20 px-8'
+        cls='bg-black text-white py-20 px-8'
     )
 
     key_figures = Section(
@@ -104,15 +101,15 @@ def investors_page():
                 cls='text-center mb-12'
             ),
             Div(
-                Div(H3('$500', cls='text-3xl font-extrabold text-primary mb-1'), P('Minimum Investment', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('10-18%', cls='text-3xl font-extrabold text-primary mb-1'), P('Target Returns', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('3-10 yr', cls='text-3xl font-extrabold text-primary mb-1'), P('Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
-                Div(H3('180+', cls='text-3xl font-extrabold text-primary mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('\u20ac500', cls='text-3xl font-extrabold text-black mb-1'), P('Minimum Investment', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('10\u201318%', cls='text-3xl font-extrabold text-black mb-1'), P('Target Returns', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('3\u201310 yr', cls='text-3xl font-extrabold text-black mb-1'), P('Hold Period', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
+                Div(H3('180+', cls='text-3xl font-extrabold text-black mb-1'), P('Artworks Funded', cls='text-xs text-gray-500 uppercase tracking-wider'), cls='text-center'),
                 cls='max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8'
             ),
             cls='max-w-7xl mx-auto'
         ),
-        cls='py-20 px-8 bg-gallery-cream'
+        cls='py-20 px-8 bg-[#FAFAFA]'
     )
 
     cta = Section(
@@ -121,7 +118,7 @@ def investors_page():
             P('Create your free account and invest in your first artwork in minutes.',
               cls='text-lg text-white/90 max-w-xl mx-auto mb-8'),
             A('Create Account', href='/register',
-              cls='inline-block px-8 py-3 rounded-md font-semibold text-base no-underline bg-accent text-dark hover:bg-accent-dark transition-colors'),
+              cls='inline-block px-8 py-3 rounded-full font-semibold text-base no-underline bg-white text-black hover:bg-gray-200 transition-colors'),
         ),
         cls='art-gradient text-white py-20 px-8 text-center'
     )
