@@ -1,4 +1,43 @@
 from fasthtml.common import *
+from db import SessionLocal
+from models import Artwork, ArtworkStatus
+
+
+def artwork_card_artist(a):
+    return Div(
+        Div(
+            Img(src=a.image_url, alt=a.title,
+                cls='w-full h-56 object-cover') if a.image_url else
+            Div('No Image', cls='w-full h-56 bg-gray-100 flex items-center justify-center text-gray-400 text-sm'),
+            Span(a.category.value.replace('_', ' ').title(),
+                 cls='absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-700'),
+            cls='relative overflow-hidden rounded-t-xl'
+        ),
+        Div(
+            P(a.artist_name or 'Unknown Artist', cls='text-xs text-primary font-semibold uppercase tracking-wider mb-1'),
+            H3(a.title, cls='text-lg font-bold text-gray-900 mb-2 leading-tight'),
+            Div(
+                Span(a.medium or '', cls='text-xs text-gray-400') if a.medium else '',
+                Span(f'{a.origin_country}', cls='text-xs text-gray-400') if a.origin_country else '',
+                cls='flex items-center gap-2 mb-3'
+            ),
+            Div(
+                Div(
+                    P('Estimated Value', cls='text-xs text-gray-400'),
+                    P(f'€{a.estimated_value:,.0f}' if a.estimated_value else 'TBD', cls='text-base font-bold text-gray-900'),
+                ),
+                Div(
+                    P('Status', cls='text-xs text-gray-400'),
+                    P(a.status.value.title(), cls='text-base font-bold text-primary'),
+                ),
+                cls='grid grid-cols-2 gap-4 mb-4'
+            ),
+            A('Consign Similar Work', href='/contact',
+              cls='block text-center px-6 py-2.5 rounded-full font-semibold text-sm bg-accent text-white hover:bg-accent-dark transition-colors no-underline'),
+            cls='p-6'
+        ),
+        cls='bg-white rounded-xl border border-gray-200 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all'
+    )
 
 
 def artists_page():
@@ -48,6 +87,30 @@ def artists_page():
             cls='max-w-7xl mx-auto'
         ),
         cls='py-20 px-8 bg-blue-50'
+    )
+
+    # Fetch artworks from DB
+    db = SessionLocal()
+    try:
+        artworks = db.query(Artwork).filter(
+            Artwork.status.in_([ArtworkStatus.active, ArtworkStatus.funded])
+        ).order_by(Artwork.id.desc()).all()
+        cards = [artwork_card_artist(a) for a in artworks]
+    finally:
+        db.close()
+
+    listings = Section(
+        Div(
+            Div(
+                H2('Works on Our Platform', cls='font-display text-3xl font-bold text-gray-900 mb-4'),
+                P('See the calibre of artworks we represent. Have something similar? Get in touch.', cls='text-base text-gray-500 max-w-xl mx-auto'),
+                cls='text-center mb-12'
+            ),
+            Div(*cards, cls='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8') if cards else
+            P('No artworks currently listed. Check back soon.', cls='text-gray-500 text-center'),
+            cls='max-w-7xl mx-auto'
+        ),
+        cls='py-20 px-8'
     )
 
     eligible = Section(
@@ -141,4 +204,4 @@ def artists_page():
         cls='py-20 px-8'
     )
 
-    return Div(hero, benefits, eligible, deal_details, process)
+    return Div(hero, benefits, listings, eligible, deal_details, process)

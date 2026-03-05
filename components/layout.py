@@ -34,14 +34,19 @@ def app_styles():
     )
 
 
-def NavBar(active='home'):
-    nav_items = [
+def NavBar(active='home', sess=None):
+    logged_in = sess and sess.get('auth')
+    user_name = (sess.get('name', '') if sess else '') or ''
+
+    nav_items_left = [
         ('home', '/', 'Home'),
-        ('how-it-works', '/how-it-works', 'How It Works'),
         ('investors', '/investors', 'Investors'),
         ('artists', '/artists', 'Artists'),
         ('about', '/about', 'About'),
         ('contact', '/contact', 'Contact'),
+    ]
+    nav_items_right = [
+        ('how-it-works', '/how-it-works', 'How It Works'),
     ]
 
     def nav_link(key, href, label):
@@ -49,6 +54,18 @@ def NavBar(active='home'):
         if key == active:
             return A(label, href=href, cls=f'{base} text-accent')
         return A(label, href=href, cls=f'{base} text-blue-100 hover:text-white')
+
+    if logged_in:
+        auth_items = [
+            Li(Span(user_name, cls='text-blue-200 text-sm')) if user_name else '',
+            Li(A('Log Out', href='/logout',
+                 cls='bg-white/15 text-white px-5 py-2 rounded-full font-semibold text-sm no-underline hover:bg-white/25 transition-colors')),
+        ]
+    else:
+        auth_items = [
+            Li(A('Login', href='/login',
+                 cls='bg-white text-primary px-5 py-2 rounded-full font-semibold text-sm no-underline hover:bg-blue-50 transition-colors')),
+        ]
 
     return Nav(
         Div(
@@ -58,11 +75,12 @@ def NavBar(active='home'):
                    cls='md:hidden bg-transparent border-none text-white text-2xl cursor-pointer',
                    onclick="document.getElementById('nav-links').classList.toggle('hidden')"),
             Ul(
-                *[Li(nav_link(key, href, label)) for key, href, label in nav_items],
-                Li(A('Login', href='/login',
-                     cls='bg-white text-primary px-5 py-2 rounded-full font-semibold text-sm no-underline hover:bg-blue-50 transition-colors')),
+                *[Li(nav_link(key, href, label)) for key, href, label in nav_items_left],
+                Li(cls='flex-grow'),  # spacer pushes right items
+                *[Li(nav_link(key, href, label)) for key, href, label in nav_items_right],
+                *auth_items,
                 id='nav-links',
-                cls='hidden md:flex items-center gap-8 list-none m-0 p-0'
+                cls='hidden md:flex items-center gap-8 list-none m-0 p-0 flex-grow'
             ),
             cls='max-w-7xl mx-auto flex items-center justify-between h-[70px] gap-8'
         ),
@@ -122,10 +140,10 @@ def PageFooter():
     )
 
 
-def Page(content, active='home', title='Kanvas.ai'):
+def Page(content, active='home', title='Kanvas.ai', sess=None):
     return (
         Title(f'{title} - Fine Art Investment Platform'),
-        NavBar(active),
+        NavBar(active, sess=sess),
         Main(content),
         PageFooter()
     )

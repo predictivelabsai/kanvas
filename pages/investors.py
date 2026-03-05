@@ -1,4 +1,46 @@
 from fasthtml.common import *
+from db import SessionLocal
+from models import Artwork, ArtworkStatus
+
+
+def artwork_card_investor(a):
+    status_cls = 'bg-green-100 text-green-800' if a.status.value == 'active' else 'bg-blue-100 text-blue-800'
+    status_label = 'Open for Investment' if a.status.value == 'active' else 'Fully Funded'
+    return Div(
+        Div(
+            Img(src=a.image_url, alt=a.title,
+                cls='w-full h-56 object-cover') if a.image_url else
+            Div('No Image', cls='w-full h-56 bg-gray-100 flex items-center justify-center text-gray-400 text-sm'),
+            Span(status_label, cls=f'absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-semibold {status_cls}'),
+            cls='relative overflow-hidden rounded-t-xl'
+        ),
+        Div(
+            P(a.artist_name or 'Unknown Artist', cls='text-xs text-primary font-semibold uppercase tracking-wider mb-1'),
+            H3(a.title, cls='text-lg font-bold text-gray-900 mb-2 leading-tight'),
+            Div(
+                Span(a.category.value.replace('_', ' ').title(), cls='text-xs bg-blue-50 text-primary px-2 py-1 rounded'),
+                Span(f'{a.origin_country}', cls='text-xs text-gray-400') if a.origin_country else '',
+                cls='flex items-center gap-2 mb-3'
+            ),
+            Div(
+                Div(
+                    P('Estimated Value', cls='text-xs text-gray-400'),
+                    P(f'€{a.estimated_value:,.0f}' if a.estimated_value else 'TBD', cls='text-base font-bold text-gray-900'),
+                ),
+                Div(
+                    P('Target Return', cls='text-xs text-gray-400'),
+                    P(f'{a.appreciation_rate}% p.a.' if a.appreciation_rate else 'TBD', cls='text-base font-bold text-primary'),
+                ),
+                cls='grid grid-cols-2 gap-4 mb-4'
+            ),
+            A('Invest Now', href='/register',
+              cls='block text-center px-6 py-2.5 rounded-full font-semibold text-sm bg-primary text-white hover:bg-primary-dark transition-colors no-underline')
+            if a.status.value == 'active' else
+            Span('Fully Funded', cls='block text-center px-6 py-2.5 rounded-full font-semibold text-sm bg-gray-100 text-gray-500'),
+            cls='p-6'
+        ),
+        cls='bg-white rounded-xl border border-gray-200 overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all'
+    )
 
 
 def investors_page():
@@ -44,6 +86,30 @@ def investors_page():
             cls='max-w-7xl mx-auto'
         ),
         cls='py-20 px-8 bg-blue-50'
+    )
+
+    # Fetch artworks from DB
+    db = SessionLocal()
+    try:
+        artworks = db.query(Artwork).filter(
+            Artwork.status.in_([ArtworkStatus.active, ArtworkStatus.funded])
+        ).order_by(Artwork.id.desc()).all()
+        cards = [artwork_card_investor(a) for a in artworks]
+    finally:
+        db.close()
+
+    listings = Section(
+        Div(
+            Div(
+                H2('Current Offerings', cls='font-display text-3xl font-bold text-gray-900 mb-4'),
+                P('Browse our curated selection of investment-grade artworks.', cls='text-base text-gray-500 max-w-xl mx-auto'),
+                cls='text-center mb-12'
+            ),
+            Div(*cards, cls='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8') if cards else
+            P('No artworks currently available. Check back soon.', cls='text-gray-500 text-center'),
+            cls='max-w-7xl mx-auto'
+        ),
+        cls='py-20 px-8'
     )
 
     investment_options = Section(
@@ -123,4 +189,4 @@ def investors_page():
         cls='art-gradient text-white py-20 px-8 text-center'
     )
 
-    return Div(hero, benefits, investment_options, key_figures, cta)
+    return Div(hero, benefits, listings, investment_options, key_figures, cta)

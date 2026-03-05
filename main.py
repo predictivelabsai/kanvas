@@ -44,28 +44,28 @@ def check_auth(sess):
 # --- Public pages ---
 
 @rt
-def index():
-    return Page(home_page(), active='home')
+def index(sess):
+    return Page(home_page(), active='home', sess=sess)
 
 @rt('/how-it-works')
-def how_it_works():
-    return Page(how_it_works_page(), active='how-it-works', title='How It Works')
+def how_it_works(sess):
+    return Page(how_it_works_page(), active='how-it-works', title='How It Works', sess=sess)
 
 @rt
-def investors():
-    return Page(investors_page(), active='investors', title='Investors')
+def investors(sess):
+    return Page(investors_page(), active='investors', title='Investors', sess=sess)
 
 @rt
-def artists():
-    return Page(artists_page(), active='artists', title='Artists')
+def artists(sess):
+    return Page(artists_page(), active='artists', title='Artists', sess=sess)
 
 @rt
-def about():
-    return Page(about_page(), active='about', title='About')
+def about(sess):
+    return Page(about_page(), active='about', title='About', sess=sess)
 
 @rt
-def contact():
-    return Page(contact_page(), active='contact', title='Contact')
+def contact(sess):
+    return Page(contact_page(), active='contact', title='Contact', sess=sess)
 
 
 # --- Auth pages ---
@@ -224,7 +224,7 @@ def logout(sess):
 # --- FAQ page ---
 
 @rt
-def faq():
+def faq(sess):
     from models import FAQ
     db = SessionLocal()
     try:
@@ -256,7 +256,7 @@ def faq():
                 cls='py-20 px-8 bg-gallery-cream'
             ),
         ),
-        active='', title='FAQ'
+        active='', title='FAQ', sess=sess
     )
 
 
