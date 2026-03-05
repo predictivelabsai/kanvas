@@ -289,4 +289,4 @@ async def startup():
         print(f"DB init warning: {e}")
 
 
-serve(port=int(os.environ.get('PORT', 5001)))
+serve(port=int(os.environ.get('PORT', 5009)))

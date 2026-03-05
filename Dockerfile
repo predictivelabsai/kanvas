@@ -35,8 +35,8 @@ RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD curl -f http://localhost:5001/api/health || exit 1
+    CMD curl -f http://localhost:5009/api/health || exit 1
 
-EXPOSE 5001
+EXPOSE 5009
 
 CMD ["python", "main.py"]

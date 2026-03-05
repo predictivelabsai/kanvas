@@ -3,11 +3,13 @@ services:
     build: .
     environment:
       - DB_URL=${DB_URL}
-      - PORT=${PORT:-5001}
+      - PORT=${PORT:-5009}
     expose:
-      - "5001"
+      - "5009"
+    ports:
+      - "5009:5009"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5001/api/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:5009/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
