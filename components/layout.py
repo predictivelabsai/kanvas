@@ -53,7 +53,7 @@ def NavBar(active='home', sess=None):
     def nav_link(key, href, label):
         base = 'text-sm font-medium no-underline transition-colors duration-200'
         if key == active:
-            return A(label, href=href, cls=f'{base} text-accent')
+            return A(label, href=href, cls=f'{base} text-white')
         return A(label, href=href, cls=f'{base} text-blue-100 hover:text-white')
 
     if logged_in:
@@ -70,7 +70,7 @@ def NavBar(active='home', sess=None):
 
     return Nav(
         Div(
-            A('Kanvas', Span('.ai', cls='text-accent'), href='/',
+            A('Kanvas', Span('.ai', cls='text-blue-200'), href='/',
               cls='font-display text-2xl font-bold text-white no-underline tracking-wide shrink-0'),
             Button('\u2630',
                    cls='md:hidden bg-transparent border-none text-white text-2xl cursor-pointer',
@@ -95,7 +95,7 @@ def PageFooter():
         Div(
             Div(
                 Div(
-                    H3('Kanvas', Span('.ai', cls='text-accent'),
+                    H3('Kanvas', Span('.ai', cls='text-blue-200'),
                        cls='font-display text-white text-xl mb-4 tracking-wide'),
                     P('Fine art investment made accessible. We connect investors with expertly curated artworks, '
                       'delivering transparent returns backed by tangible, appreciating assets.',
